@@ -1,11 +1,18 @@
 "use client";
 import Image from "next/image";
 import Photo from "./_components/photo";
+import React, { useEffect, useState } from "react";
 import ReactConfetti from "react-confetti";
 
 export default function Home() {
-  const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  }, []);
 
   return (
     <section className="h-screen w-full mt-4">
@@ -19,8 +26,8 @@ export default function Home() {
         <ReactConfetti
           className="pointer-events-none z-[10]"
           numberOfPieces={1000}
-          width={windowWidth}
-          height={windowHeight}
+          width={windowSize.width}
+          height={windowSize.height}
         />
         <h1 className="text-[4rem] text-white">Happy Birthday</h1>
         <span className="text-white text-[2rem] font-bold mb-2">22</span>
