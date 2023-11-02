@@ -4,13 +4,8 @@ import Photo from "./_components/photo";
 import ReactConfetti from "react-confetti";
 
 export default function Home() {
-  const boolean = true;
-  const playAudio = () => {
-    const audio = new Audio("/assets/audio/happy-birthday.mp3");
-    if (boolean) {
-      audio.play();
-    }
-  };
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
 
   return (
     <section className="h-screen w-full mt-4">
@@ -24,6 +19,8 @@ export default function Home() {
         <ReactConfetti
           className="pointer-events-none z-[10]"
           numberOfPieces={1000}
+          width={windowWidth}
+          height={windowHeight}
         />
         <h1 className="text-[4rem] text-white">Happy Birthday</h1>
         <span className="text-white text-[2rem] font-bold mb-2">22</span>
