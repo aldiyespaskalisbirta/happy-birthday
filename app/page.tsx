@@ -29,7 +29,7 @@ export default function Home() {
           Maria Novia Delviyanti
         </span>
       </header>
-      <section className="">
+      <section className="overflow-y-auto">
         <Photo />
       </section>
     </section>
