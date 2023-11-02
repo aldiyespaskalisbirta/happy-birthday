@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Engagement } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import { ConfettiProvider } from "@/components/providers/confetti-provider";
 
 const engagement = Engagement({ weight: ["400"], subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body
         className={`${engagement.className} bg-pink-300 max-h-screen overflow-hidden`}
       >
+        <ConfettiProvider />
         {children}
       </body>
     </html>
