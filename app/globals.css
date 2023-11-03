@@ -74,3 +74,58 @@
     @apply bg-background text-foreground;
   }
 }
+
+.candle {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.candle .flame {
+  height: 30px;
+  width: 15px;
+  background: #ffad00;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0 #ffad00;
+  animation: animate-candle 15s ease-in-out infinite,
+    animate-glow 2s linear infinite;
+}
+
+.candle .wick {
+  height: 10px;
+  width: 3px;
+  background: #636262;
+}
+
+@keyframes animate-candle {
+  0%,
+  22%,
+  49%,
+  62%,
+  81%,
+  100% {
+    border-radius: 14px 2px 8px 8px/20px 20px 8px 8px;
+  }
+  14%,
+  32%,
+  56%,
+  70%,
+  89% {
+    border-radius: 2px 14px 8px 8px/20px 20px 8px 8px;
+  }
+}
+
+@keyframes animate-glow {
+  0%,
+  30%,
+  60%,
+  80%,
+  100% {
+    box-shadow: 0 0 20px #ffad00;
+  }
+  20%,
+  0%,
+  70% {
+    box-shadow: 0 0 20px #ffad00;
+  }
+}

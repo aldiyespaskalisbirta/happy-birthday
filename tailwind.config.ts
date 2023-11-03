@@ -70,10 +70,29 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        "candle-animate": {
+          "0%, 22%, 49%, 62%, 81%, 100%": {
+            borderRadius: "14px 2px 8px 8px/20px 20px 8px 8px",
+          },
+          "14%, 32%, 56%, 70%, 89%": {
+            borderRadius: "14px 2px 8px 8px/20px 20px 8px 8px",
+          },
+        },
+        "animate-glow": {
+          "0%, 100%": {
+            boxShadow: "0 0 20px #ffad00",
+          },
+          "50%": {
+            boxShadow: "0 0 25px #ffad00",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "spin-slow": "spin 5s linear infinite",
+        candle: "candle-animate s ease-in-out infinite",
+        glow: "animate-glow 0.5s linear infinite",
       },
     },
   },
